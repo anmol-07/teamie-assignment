@@ -77,9 +77,34 @@ export default {
       selectedSortId: undefined,
       selectedSortLabel: undefined,
       selectedSortType: undefined,
+      selctedSortIndex: -1,
     };
   },
+  mounted() {
+    document.querySelector("body").addEventListener("keydown", (e) => {
+      e = e || window.event;
+      if (e.keyCode === 83 || e.which === 83) {  // added sort functionality on 's' key
+        if (
+          this.selectedSortIndex < this.sortOptions.length - 1 &&
+          this.selectedSortIndex >= -1
+        ) {
+          this.selectedSortIndex += 1;
+          this.changeActiveSort(
+            this.sortOptions[this.selectedSortIndex],
+            this.selctedSortIndex
+          );
+        } else {
+          this.selectedSortIndex = 0;
+          this.changeActiveSort(
+            this.sortOptions[this.selectedSortIndex],
+            this.selctedSortIndex
+          );
+        }
+      }
+    });
+  },
   methods: {
+    //function to change the sort and emit sort event for the parent component
     changeActiveSort(sort, index) {
       if (this.selectedSortId === sort.id) {
         this.sortOptions[index].activeSortType =

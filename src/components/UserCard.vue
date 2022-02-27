@@ -1,6 +1,6 @@
 <template>
   <div class="col-4 card">
-    <div class="user-details-outer">
+    <div class="user-details-outer" :class="{'selected-user': isSelectedUser}">
       <div class="user-heading">
         <div class="user-image-outer-div">
           <img
@@ -137,6 +137,7 @@ export default {
   name: "UserCard",
   props: {
     userDetails: Object,
+    isSelectedUser: false
   },
 
   data() {
@@ -146,6 +147,7 @@ export default {
   },
   
   methods: {
+    //function to get the user joined since date in human readable format
     getReadableDate(dateTimeStamp) {
       let theDate = new Date(dateTimeStamp * 1000);
       return theDate.toDateString();

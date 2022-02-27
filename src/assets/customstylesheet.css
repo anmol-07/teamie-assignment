@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-.custom-outer-container .card .user-details-outer:hover {
+.custom-outer-container .card .user-details-outer:hover, .custom-outer-container .card .user-details-outer.selected-user {
   background: #e4f2fb !important;
   transform: translateY(-10px);
 }
@@ -269,5 +269,11 @@
     font-weight: 600;
     padding: 3px 24px;
     font-size: 14px;
+}
+
+.custom-outer-container .higlighted-text {
+  cursor: pointer;
+  font-weight: 900;
+  text-decoration: none;
 }
 
