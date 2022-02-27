@@ -45,7 +45,7 @@
           'user-other-details',
         ]"
       >
-        <h5>User Ratings</h5>
+        <h5>User Details</h5>
         <div class="user-detail-div">
           <span>
             <span class="twubric-score-icon-outer">

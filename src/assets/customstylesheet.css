@@ -42,7 +42,7 @@
 }
 
 .custom-outer-container .card .user-details-outer:hover {
-  background: #b1e0ff !important;
+  background: #e4f2fb !important;
   transform: translateY(-10px);
 }
 
@@ -64,10 +64,10 @@
 }
 
 .custom-outer-container .card .user-other-details {
-  display: block;
+  display: none;
   z-index: -1;
   padding-top: 10px;
-  transition: all 0.5s;
+  transition: opacity 0.5s ease-in-out;
   height: 0;
   width: 100%;
   transform: translateY(-210px);
@@ -78,6 +78,7 @@
   height: 100%;
   opacity: 1;
   transform: translateY(0px);
+  display: block;
 }
 
 .custom-outer-container .card .user-main-details-outer span {
@@ -224,6 +225,49 @@
 
 .custom-outer-container .user-other-details h5 {
   text-align: left;
+  font-weight: 600;
 }
 
+
+.b-form-btn-label-control.form-control, .custom-outer-container .sort-options-outer .sort-list-outer{
+	background-color: #ebecef;
+    border-color: #ebecef;
+}
+
+.custom-outer-container .card .user-heading .card-img-top{
+    border-radius: 50%;
+    margin-bottom: 10px;	
+}
+
+.user-main-details-outer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.custom-outer-container .card .user-main-details-outer span {
+    color: #707070;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 0px;
+}
+.custom-outer-container .ratings-outer .ratings-label{
+	border-radius: 4px;
+	    background: #55bfb5;
+}
+
+.custom-outer-container .action-buttons-outer .show-more-button {
+    background: #55bfb5;
+    border: 1px solid #55bfb5 !important;
+    box-shadow: none!important;
+    border-radius: 40px;
+    color: #fff;
+    font-weight: 600;
+    padding: 3px 24px;
+    font-size: 14px;
+}
 

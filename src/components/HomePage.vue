@@ -1,6 +1,10 @@
 <template>
   <div class="container custom-outer-container">
-    <b-modal @ok="deleteUserFromList()" id="deleteConfirmationModal" title="BootstrapVue">
+    <b-modal
+      @ok="deleteUserFromList()"
+      id="deleteConfirmationModal"
+      title="BootstrapVue"
+    >
       <p class="my-4">Are you sure to delete the user?</p>
     </b-modal>
     <template v-if="!loadingFlag">
@@ -50,7 +54,7 @@ export default {
       filteredList: [],
       filterDates: {},
       loadingFlag: false,
-      userIdToDelete: undefined
+      userIdToDelete: undefined,
     };
   },
   mounted() {
@@ -92,14 +96,24 @@ export default {
           });
     },
     showConfirmationPopup(userId) {
-      this.$bvModal.show('deleteConfirmationModal');
+      this.$bvModal.show("deleteConfirmationModal");
       this.userIdToDelete = userId;
     },
     deleteUserFromList() {
-      let userIndex = this.userList.findIndex((x) => x.uid === this.userIdToDelete);
-      console.log(userIndex);
-      this.userList.splice(userIndex, 1);
-    }
+      if (this.filteredList.length <= 0) {
+        let userIndex = this.userList.findIndex(
+          (x) => x.uid === this.userIdToDelete
+        );
+        this.userList.splice(userIndex, 1);
+      } else {
+        let userIndexInFilteredList = this.filteredList.findIndex(
+          (x) => x.uid === this.userIdToDelete
+        );
+        let userIndexInOrginalList = this.userList.findIndex((x) => x.uid === this.userIdToDelete);
+        this.userList.splice(userIndexInOrginalList, 1);
+        this.filteredList.splice(userIndexInFilteredList, 1);
+      }
+    },
   },
 
   computed: {
