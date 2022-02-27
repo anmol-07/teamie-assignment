@@ -3,7 +3,7 @@
     <b-modal
       @ok="deleteUserFromList()"
       id="deleteConfirmationModal"
-      title="BootstrapVue"
+      title="Do you want to proceed"
     >
       <p class="my-4">Are you sure to delete the user?</p>
     </b-modal>
